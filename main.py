@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 st.set_page_config(
     page_title="Gemini AI Assistant",
     page_icon="🤖",
-    layout="wide"
+    layout="wide" 
 )
 
 def load_api_key():
