@@ -137,7 +137,6 @@ if __name__ == "__main__":
 # import os
 # import sys
 
-
 # def load_api_key():
 #     """Load Gemini API key from .env file."""
 #     load_dotenv()
