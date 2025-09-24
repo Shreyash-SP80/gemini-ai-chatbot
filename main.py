@@ -128,3 +128,80 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# CLI
+# from langchain_core.messages import HumanMessage
+# from langchain_google_genai import ChatGoogleGenerativeAI
+# from langgraph.prebuilt import create_react_agent
+# from dotenv import load_dotenv
+# import os
+# import sys
+
+
+# def load_api_key():
+#     """Load Gemini API key from .env file."""
+#     load_dotenv()
+#     api_key = os.getenv("GOOGLE_API_KEY")
+
+#     if not api_key:
+#         sys.exit("❌ Error: GOOGLE_API_KEY not found in .env file")
+
+#     return api_key
+
+
+# def build_agent(api_key: str):
+#     """Initialize the Gemini chat model and agent executor."""
+#     model = ChatGoogleGenerativeAI(
+#         model="gemini-1.5-flash",  
+#         temperature=0,
+#         google_api_key=api_key
+#     )
+
+#     tools = []  
+#     return create_react_agent(model, tools)
+
+
+# def run_chat(agent_executor):
+#     """Run interactive chat loop with the AI assistant."""
+#     print("\nWelcome! I'm your Gemini-powered AI assistant.")
+#     print("Type 'quit' anytime to exit.\n")
+
+#     while True:
+#         try:
+#             user_input = input("You: ").strip()
+
+#             if user_input.lower() in {"quit", "exit"}:
+#                 print("👋 Goodbye!")
+#                 break
+
+          
+#             print("Assistant: Typing...", end="\r", flush=True)
+
+#             response_started = False
+#             for chunk in agent_executor.stream(
+#                 {"messages": [HumanMessage(content=user_input)]}
+#             ):
+#                 if not response_started:
+#                     print("Assistant: ", end="", flush=True)
+#                     response_started = True
+
+#                 if "agent" in chunk and "messages" in chunk["agent"]:
+#                     for message in chunk["agent"]["messages"]:
+#                         print(message.content, end="", flush=True)
+
+#             print()  
+#         except KeyboardInterrupt:
+#             print("\n\n🛑 Interrupted by user. Exiting...")
+#             break
+#         except Exception as e:
+#             print(f"\n⚠️ Error: {e}")
+
+
+# def main():
+#     api_key = load_api_key()
+#     agent_executor = build_agent(api_key)
+#     run_chat(agent_executor)
+
+
+# if __name__ == "__main__":
+#     main()
