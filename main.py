@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 # Page configuration
 st.set_page_config(
-    page_title="Gemini AI Assistant",
+    page_title="Gemini AI Assistant", 
     page_icon="🤖",
     layout="wide" 
 )
