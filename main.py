@@ -21,7 +21,7 @@ def load_api_key():
     load_dotenv(env_path)
     
     api_key = os.getenv("GOOGLE_API_KEY")
-
+ 
     if not api_key:
         st.error("""
         ❌ Error: GOOGLE_API_KEY not found. 
